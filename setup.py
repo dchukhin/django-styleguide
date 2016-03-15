@@ -7,7 +7,7 @@ setup(
     author_email='solutions@caktusgroup.com',
     packages=find_packages(exclude=['sample_project']),
     include_package_data=True,
-    url='http://github.com/caktus/django-styleguide/',
+    url='http://github.com/dchukhin/django-styleguide/',
     license='BSD',
     description='Styleguide helper for projects that work with design teams',
     classifiers=[

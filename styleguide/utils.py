@@ -24,6 +24,13 @@ def get_styleguide_dirs():
     for engine in engines:
         for loader in engine.engine.template_loaders:
             for template_dir in loader.get_template_sources('styleguide'):
-                if os.path.isdir(template_dir):
-                    template_dirs.append(template_dir)
+                # Django <1.9
+                if isinstance(template_dir, str):
+                    template_dir_name = template_dir
+                # Django >= 1.9
+                else:
+                    template_dir_name = template_dir.name
+
+                if os.path.isdir(template_dir.name):
+                    template_dirs.append(template_dir_name)
     return template_dirs
